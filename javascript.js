@@ -1,4 +1,5 @@
 console.log("Rock Paper Scissors");
+console.log("Hello World");
 let humanScore = 0;
 let computerScore = 0;
 
