@@ -1,4 +1,4 @@
-console.log("Hello World");
+console.log("Rock Paper Scissors");
 // Create Two global scope variables
 //  with initial value of 0. Used to keep
 // track of the players Score
@@ -49,7 +49,7 @@ function playRound(humanChoice, computerChoice) {
 
 // create a playGame function that plays 5 rounds of
 // rock paper scissors and keeps track of the score
-function playGame() {
+/*function playGame() {
     for(let i=1; i<=5; i++){
         console.log(`Round ${i}`);
         playRound(getHumanChoice(), getComputerChoice());
@@ -69,4 +69,4 @@ function playGame() {
     }
 }
 
-playGame();
+playGame();*/
