@@ -40,20 +40,20 @@ function getComputerChoice(){
 // and returns the result of the round
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
-        console.log("It's a tie!");
+        resultsDiv.textContent="It's a tie!";
     }
     else if((humanChoice==="rock" && computerChoice=="scissors" )
             || (humanChoice==="scissors" && computerChoice=="paper")
             || (humanChoice==="paper" && computerChoice=="rock")){
         humanScore=humanScore+1;
-        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        resultsDiv.textContent=`You win! ${humanChoice} beats ${computerChoice}`;
     }
     else {
         computerScore=computerScore+1;
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        resultsDiv.textContent=`You lose! ${computerChoice} beats ${humanChoice}`;
     }
-    console.log(`Human Score: ${humanScore}`);
-    console.log(`Computer Score: ${computerScore}`);
+    resultsDiv.textContent=`Human Score: ${humanScore}`;
+    resultsDiv.textContent=`Computer Score: ${computerScore}`;
 }
 
 // Adding Event listener to RPS Buttons
