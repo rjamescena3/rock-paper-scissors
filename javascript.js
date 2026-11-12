@@ -8,6 +8,8 @@ const scissorsButton=document.querySelector("#scissors");
 
 //select the Div results container
 const resultsDiv=document.querySelector("#results");
+const scoreDiv=document.querySelector("#score");
+const winnerDiv=document.querySelector("#winner");
 
 
 
@@ -52,8 +54,7 @@ function playRound(humanChoice, computerChoice) {
         computerScore=computerScore+1;
         resultsDiv.textContent=`You lose! ${computerChoice} beats ${humanChoice}`;
     }
-    resultsDiv.textContent=`Human Score: ${humanScore}`;
-    resultsDiv.textContent=`Computer Score: ${computerScore}`;
+    scoreDiv.textContent=`Human Score: ${humanScore} | Computer Score: ${computerScore}`;
 }
 
 // Adding Event listener to RPS Buttons
