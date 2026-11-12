@@ -2,6 +2,13 @@ console.log("Rock Paper Scissors");
 // Create Two global scope variables
 //  with initial value of 0. Used to keep
 // track of the players Score
+
+//select RPS buttons
+const rockButton=document.querySelector("#rock");
+const paperButton=document.querySelector("#paper");
+const scissorsButton=document.querySelector("#scissors");
+
+
 let humanScore = 0;
 let computerScore = 0;
 
@@ -21,10 +28,10 @@ function getComputerChoice(){
 //console.log(getComputerChoice());
 
 // create a getHumanChoice function that prompts the user to enter rock, paper or scissors and returns the value
-function getHumanChoice(){
+/*function getHumanChoice(){
     let userInput=prompt("Please choose: rock, paper or scissors");
     return userInput.toLocaleLowerCase();
-}
+}*/
 //console.log(getHumanChoice());
 
 // create a playRound function that takes in the human choice and computer choice 
@@ -47,9 +54,20 @@ function playRound(humanChoice, computerChoice) {
     console.log(`Computer Score: ${computerScore}`);
 }
 
+// Adding Event listener to RPS Buttons
+rockButton.addEventListener("click",()=>{
+    playRound("rock",getComputerChoice);
+});
+paperButton.addEventListener("click",()=>{
+    playRound("paper",getComputerChoice);
+});
+scissorsButton.addEventListener("click",()=>{
+    playRound("scissors",getComputerChoice);
+});
+
 // create a playGame function that plays 5 rounds of
 // rock paper scissors and keeps track of the score
-/*function playGame() {
+function playGame() {
     for(let i=1; i<=5; i++){
         console.log(`Round ${i}`);
         playRound(getHumanChoice(), getComputerChoice());
@@ -69,4 +87,4 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-playGame();*/
+//playGame();
