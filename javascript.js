@@ -1,12 +1,14 @@
 console.log("Rock Paper Scissors");
-// Create Two global scope variables
-//  with initial value of 0. Used to keep
-// track of the players Score
+
 
 //select RPS buttons
 const rockButton=document.querySelector("#rock");
 const paperButton=document.querySelector("#paper");
 const scissorsButton=document.querySelector("#scissors");
+
+//select the Div results container
+const resultsDiv=document.querySelector("#results");
+
 
 
 let humanScore = 0;
