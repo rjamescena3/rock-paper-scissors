@@ -1,5 +1,7 @@
 console.log("Rock Paper Scissors");
 
+let humanScore = 0;
+let computerScore = 0;
 
 //select RPS buttons
 const rockButton=document.querySelector("#rock");
@@ -10,11 +12,6 @@ const scissorsButton=document.querySelector("#scissors");
 const resultsDiv=document.querySelector("#results");
 const scoreDiv=document.querySelector("#score");
 const winnerDiv=document.querySelector("#winner");
-
-
-
-let humanScore = 0;
-let computerScore = 0;
 
 // create a getComputerChoice function that returns either rock, paper or scissors randomly
 function getComputerChoice(){
@@ -29,18 +26,28 @@ function getComputerChoice(){
         return "scissors";
     }
 }
-//console.log(getComputerChoice());
 
-// create a getHumanChoice function that prompts the user to enter rock, paper or scissors and returns the value
-/*function getHumanChoice(){
-    let userInput=prompt("Please choose: rock, paper or scissors");
-    return userInput.toLocaleLowerCase();
-}*/
-//console.log(getHumanChoice());
+// Adding Event listener to RPS Buttons
+rockButton.addEventListener("click",()=>{
+   playRound("rock",getComputerChoice());
+});
+paperButton.addEventListener("click",()=>{
+  playRound("paper",getComputerChoice());
+});
+scissorsButton.addEventListener("click",()=>{
+  playRound("scissors",getComputerChoice());
+});
 
-// create a playRound function that takes in the human choice and computer choice 
-// and returns the result of the round
+/*create a playRound function that takes in the human choice and computer choice 
+and returns the result of the round*/
+
 function playRound(humanChoice, computerChoice) {
+
+    if(humanScore===5 || computerScore===5){  //Prevent game play go above 5 score
+        return;            
+    }
+
+
     if (humanChoice === computerChoice) {
         resultsDiv.textContent="It's a tie!";
     }
@@ -54,23 +61,22 @@ function playRound(humanChoice, computerChoice) {
         computerScore=computerScore+1;
         resultsDiv.textContent=`You lose! ${computerChoice} beats ${humanChoice}`;
     }
-    scoreDiv.textContent=`Human Score: ${humanScore} | Computer Score: ${computerScore}`;
+
+    scoreDiv.textContent=`Player Score: ${humanScore} || Computer Score: ${computerScore}`;//Score Update
+ 
+     if(humanScore===5){
+        winnerDiv.textContent="Congratulations! You Win The Game";
+     }
+     else if(computerScore===5){
+        winnerDiv.textContent="Sorry! Next time, Computer wins the Game";
+     }
+
 }
 
-// Adding Event listener to RPS Buttons
-rockButton.addEventListener("click",()=>{
-    playRound("rock",getComputerChoice);
-});
-paperButton.addEventListener("click",()=>{
-    playRound("paper",getComputerChoice);
-});
-scissorsButton.addEventListener("click",()=>{
-    playRound("scissors",getComputerChoice);
-});
 
 // create a playGame function that plays 5 rounds of
 // rock paper scissors and keeps track of the score
-function playGame() {
+/*function playGame() {
     for(let i=1; i<=5; i++){
         console.log(`Round ${i}`);
         playRound(getHumanChoice(), getComputerChoice());
@@ -90,4 +96,4 @@ function playGame() {
     }
 }
 
-//playGame();
+playGame();*/
