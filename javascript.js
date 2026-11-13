@@ -42,8 +42,8 @@ scissorsButton.addEventListener("click",()=>{
 and returns the result of the round*/
 
 function playRound(humanChoice, computerChoice) {
-
-    if(humanScore===5 || computerScore===5){  //Prevent game play go above 5 score
+     //Prevent game play go above 5 score
+    if(humanScore===5 || computerScore===5){  
         return;            
     }
 
@@ -63,7 +63,7 @@ function playRound(humanChoice, computerChoice) {
     }
 
     scoreDiv.textContent=`Player Score: ${humanScore} || Computer Score: ${computerScore}`;//Score Update
- 
+    // Game Winner Logic
      if(humanScore===5){
         winnerDiv.textContent="Congratulations! You Win The Game";
      }
@@ -73,27 +73,3 @@ function playRound(humanChoice, computerChoice) {
 
 }
 
-
-// create a playGame function that plays 5 rounds of
-// rock paper scissors and keeps track of the score
-/*function playGame() {
-    for(let i=1; i<=5; i++){
-        console.log(`Round ${i}`);
-        playRound(getHumanChoice(), getComputerChoice());
-    }
-    
-    console.log("Final Score: ");
-    console.log(`Human Score: ${humanScore}`);
-    console.log(`Computer Score: ${computerScore}`);
-    if(humanScore>computerScore){
-        console.log("You win the game!");
-    }
-    else if(humanScore<computerScore){
-        console.log("You lose the game");
-    }
-    else{
-        console.log("The game is a tie!");
-    }
-}
-
-playGame();*/
